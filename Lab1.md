@@ -4,29 +4,29 @@
 
 After completing this lab, you will be able to:
 
-* Create a new project using Vivado HLS in GUI mode
-* Simulate a design
-* Synthesize a design
-* Implement a design
-* Perform design analysis using the Analysis capability of Vivado HLS
-* Analyze simulator output using Vivado and XSim simulator
+- Create a new project using Vivado HLS in GUI mode
+- Simulate a design
+- Synthesize a design
+- Implement a design
+- Perform design analysis using the Analysis capability of Vivado HLS
+- Analyze simulator output using Vivado and XSim simulator
 
 ## Steps
 
 ### Create a New Project
 
-#### Create a new project in Vivado HLS targeting PYNQ-Z1 or PYNQ-Z2 board
+#### Create a new project in Vivado HLS targeting {board}
 
 1. Select **Start > Xilinx Design Tools > Vivado HLS 2018.2**
     <p align="center">
     <img src ="./images/lab1/Figure1.png">
     </p>
     <p align = "center">
-    <i>Getting Started view of Vivado-HLS</i>
+    <i>Getting Started view of Vivado HLS</i>
     </p>
 2. In the Getting Started GUI, click on **Create New Project**. The **New Vivado HLS Project** wizard opens.
 
-3. Click the *Browse…* button of the Location field and browse to **c:\xup\hls\labs\lab1** and then click **OK**.
+3. Click the *Browse…* button of the Location field and browse to **{labs}\lab1** and then click **OK**.
 
 4. For Project Name, type **matrixmul.prj**
     <p align="center">
@@ -40,13 +40,13 @@ After completing this lab, you will be able to:
 
 6. In the *Add/Remove Files* window, type **matrixmul** as the Top Function name (the provided source file contains the function, called matrixmul, to be synthesized).
 
-7. Click the *Add Files…* button, select **matrixmul.cpp** file from the **c:\xup\hls\labs\lab1 folder**, and then click **Open**.
+7. Click the *Add Files…* button, select **matrixmul.cpp** file from the **{labs}\lab1 folder**, and then click **Open**.
 
 8. Click **Next**.
 
-9. In the *Add/Remove Files* for the testbench, click the *Add Files…* button, select **matrixmul_test.cpp** file from the **c:\xup\hls\labs\lab1** folder and click **Open**.
+9. In the *Add/Remove Files* for the testbench, click the *Add Files…* button, select **matrixmul\_test.cpp** file from the **{labs}\lab1** folder and click **Open**.
 
-10. Select the **matrixmul_test.cpp** in the files list window and click the *Edit CFLAG…* button, type **-DHW_COSIM**, and click **OK**. (This defines a compiler flag that will be used later.)
+10. Select the **matrixmul\_test.cpp** in the files list window and click the *Edit CFLAG…* button, type **-DHW\_COSIM**, and click **OK**. (This defines a compiler flag that will be used later.)
 
 11. Click **Next**.
 
@@ -86,7 +86,7 @@ After completing this lab, you will be able to:
 
 1. Select **Project > Run C Simulation**, and click **OK** in the C Simulation Dialog window.
 
-   The files will be compiled and you will see the output in the Console window.
+	The files will be compiled and you will see the output in the Console window.
     <p align="center">
     <img src ="./images/lab1/Figure6.png">
     </p>
@@ -94,11 +94,11 @@ After completing this lab, you will be able to:
     <i>Program output</i>
     </p>
 
-2. Double-click on **matrixmul_test.cpp** under **testbench** folder in the Explorer to see the content.
+2. Double-click on **matrixmul\_test.cpp** under **testbench** folder in the Explorer to see the content.
 
-    You should see two input matrices initialized with some values and then the code that executes the algorithm. If HW_COSIM is defined (as was done during the project set-up) then the **matrixmul** function is called and compares the output of the computed result with the one returned from the called function, and prints Test passed if the results match.
+    You should see two input matrices initialized with some values and then the code that executes the algorithm. If HW\_COSIM is defined (as was done during the project set-up) then the **matrixmul** function is called and compares the output of the computed result with the one returned from the called function, and prints Test passed if the results match.
 
-    If **HW_COSIM** had not been defined then it will simply output the computed result and not call the
+    If **HW\_COSIM** had not been defined then it will simply output the computed result and not call the
     **matrixmul** function.
 
 ### Run Debugger
@@ -107,9 +107,9 @@ After completing this lab, you will be able to:
 
 1. Select **Project > Run C Simulation**. Select the **Launch Debugger** option and click **OK**.
 
-   The application will be compiled with **–g** option to include the debugging information, the compiled application will be invoked, and the debug perspective will be opened automatically.
+	The application will be compiled with **–g** option to include the debugging information, the compiled application will be invoked, and the debug perspective will be opened automatically.
 
-2. The Debug perspective will show the **matrixmul_test.cpp** in the source view, **argc** and **argv** variables defined in the *Variables* view, objects which are in the current scope displayed in *Outline* view, thread created and the program suspended at the main() function entry point in the *Debug* view.
+2. The Debug perspective will show the **matrixmul\_test.cpp** in the source view, **argc** and **argv** variables defined in the *Variables* view, objects which are in the current scope displayed in *Outline* view, thread created and the program suspended at the main() function entry point in the *Debug* view.
     <p align="center">
     <img src ="./images/lab1/Figure7.png">
     </p>
@@ -120,13 +120,13 @@ After completing this lab, you will be able to:
 3. Scroll-down in the *source* view, and double-click in the blue margin at line 105 where it is about to
     output **“{“** in the output console window. This will set a break-point at line 105.
 
-  The breakpoint is marked with a blue circle, and a tick.
+	The breakpoint is marked with a blue circle, and a tick.
 
-<p align="center">
-<img src ="./images/lab1/Figure8.png">
-</p>
-<p align = "center">
-</p>
+	<p align="center">
+	<img src ="./images/lab1/Figure8.png">
+	</p>
+	<p align = "center">
+	</p>
 
 4. Similarly, set a breakpoint at line 101 in the matrixmul() function.
 
@@ -137,7 +137,7 @@ After completing this lab, you will be able to:
     <p align = "center">
     <i>Debugger’s intermediate output view</i>
     </p>
-6. Now click the **Resume** button or F8 to complete the software computation and stop at line 101.
+6. Now click the **Resume** button or press F8 to complete the software computation and stop at line 101.
 
 7. Observe the following computed software result in the variables view.
     <p align="center">
@@ -157,7 +157,7 @@ After completing this lab, you will be able to:
     <p align = "center">
     <i>Computed results</i>
     </p>
-11. Set a breakpoint on line 134 (return err_cnt;), and click on the **Resume** button.
+11. Set a breakpoint on line 134 (return err\_cnt;), and click on the **Resume** button.
 
      The execution will continue until the breakpoint is encountered. The console window will show
      the results as seen earlier (Figure 7).
@@ -197,13 +197,13 @@ After completing this lab, you will be able to:
 
 6. Using scroll bar on the right, scroll down into the report and answer the following question.
 
-**Question**
-1. Answer the following question:
-   Estimated clock period:  
-   Worst case latency:  
-   Number of DSP48E used:  
-   Number of FFs used:  
-   Number of LUTs used:
+	**Question 1**
+	Answer the following question:
+	Estimated clock period:   
+	Worst case latency:  
+	Number of DSP48E used:  
+	Number of FFs used:  
+	Number of LUTs used:
 
 7. The report also shows the top-level interface signals generated by the tools.
     <p align="center">
@@ -213,7 +213,7 @@ After completing this lab, you will be able to:
     <i>Generated interface signals</i>
     </p>
 
-    You can see ap_clk, ap_rst and ap_ idle and ap_ready control signals are automatically added to the design by default. These signals are used as handshaking signals to indicate when the design is ready to take the next computation command (ap_ready), when the next computation is started (ap_start), and when the computation is completed (ap_done). Other signals are generated based on the input and output signals in the design and their default or specified interfaces.
+    You can see ap\_clk, ap\_rst and ap\_ idle and ap\_ready control signals are automatically added to the design by default. These signals are used as handshaking signals to indicate when the design is ready to take the next computation command (ap\_ready), when the next computation is started (ap\_start), and when the computation is completed (ap\_done). Other signals are generated based on the input and output signals in the design and their default or specified interfaces.
 
 ### Analyze using Analysis Perspective
 
@@ -221,38 +221,37 @@ After completing this lab, you will be able to:
 
 1. Select **Solution > Open Analysis Perspective** or click on *Analysis* button on tools bar to open the analysis viewer.
 
-   The Analysis perspective consists of 4 panes as shown below. Note that the module and loops hierarchies are displayed unexpanded by default.
+	The Analysis perspective consists of 4 panes as shown below. Note that the module and loops hierarchies are displayed unexpanded by default.
 
-   The **Module Hierarchy** pane shows both the performance and area information for the entire design and can be used to navigate through the hierarchy. The **Performance Profile** pane is visible and shows the performance details for this level of hierarchy. The information in these two panes is similar to the information reviewed earlier in the synthesis report.
+	The **Module Hierarchy** pane shows both the performance and area information for the entire design and can be used to navigate through the hierarchy. The **Performance Profile** pane is visible and shows the performance details for this level of hierarchy. The information in these two panes is similar to the information reviewed earlier in the synthesis report.
 
-   The **Schedule Viewer** is also shown in the right-hand side pane. This view shows how the operations in this particular block are scheduled into clock cycles.
-   <p align="center">
-   <img src ="./images/lab1/Figure15.png">
-   </p>
-   <p align = "center">
-   <i>Analysis perspective</i>
-   </p>
+	The **Schedule Viewer** is also shown in the right-hand side pane. This view shows how the operations in this particular block are scheduled into clock cycles.
+	<p align="center">
+	<img src ="./images/lab1/Figure15.png">
+	</p>
+	<p align = "center">
+	<i>Analysis perspective</i>
+	</p>
        
-
 2. Click on ‘>’ of loop Row to expand, and then similarly click on sub-loops **Col** and **Product** to fully expand the loop hierarchy.
-   <p align="center">
-   <img src ="./images/lab1/Figure16.png">
-   </p>
-   <p align = "center">
-   <i>Performance matrix showing top-level Row operation</i>
-   </p>
+	<p align="center">
+	<img src ="./images/lab1/Figure16.png">
+	</p>
+	<p align = "center">
+	<i>Performance matrix showing top-level Row operation</i>
+	</p>
 
     From this we can see that in the first state (C1) of the Row the loop exit condition is checked and there is an add operation performed. This addition is likely the counter to count the loop iterations, and we can confirm this.
 
-3. Select the block for the **adder** ( **i_1(+)**) in state C1, right-click and select **Goto Source**.
+3. Select the block for the **adder** ( **i\_1(+)**) in state C1, right-click and select **Goto Source**.
 
     The source code pane will be opened, highlighting line 75 where the Row loop index is being tested and incremented. In the next state (C2) it starts to execute the Col loop.
-   <p align="center">
-   <img src ="./images/lab1/Figure17.png" width="60%" height="80%"/>
-   </p>
-   <p align = "center">
-   <i>Cross probing into the source file</i>
-   </p>
+	<p align="center">
+	<img src ="./images/lab1/Figure17.png" width="60%" height="80%"/>
+	</p>
+	<p align = "center">
+	<i>Cross probing into the source file</i>
+	</p>
 
 4. Click on the C2-8 cell (**tmp 2(+)**) in the Col loop to see the source code highlighting (line 79) update.
 
@@ -280,58 +279,53 @@ After completing this lab, you will be able to:
 
 #### Run the C/RTL Co-simulation with the default settings of VHDL. Verify that the simulation passes.
 
-1. Select **Solution > Run C/RTL Cosimulation** or click on the ![Check_Box](images/lab1/Check_Box.PNG) button in the *Synthesis* view to open the dialog box so the desired simulations can be selected and run.
+1. Select **Solution > Run C/RTL Cosimulation** or click on the ![Check\_Box](images/lab1/Check\_Box.PNG) button in the *Synthesis* view to open the dialog box so the desired simulations can be selected and run.
 
-   A **C/RTL Co-simulation Dialog box** will open.
+	A **C/RTL Co-simulation Dialog box** will open.
 
 2. Make sure the **VHDL** option is selected.
 
-   This allows the simulation to be performed using VHDL. To perform the verification using Verilog, you can select Verilog and choose the simulator from the drop-down menu or let the tools use the first simulator that appears in the PATH variable.
+	This allows the simulation to be performed using VHDL. To perform the verification using Verilog, you can select Verilog and choose the simulator from the drop-down menu or let the tools use the first simulator that appears in the PATH variable.
 
-<p align="center">
-<img src ="./images/lab1/Figure20.png">
-</p>
-<p align = "center">
-<i>A C/RTL Co-simulation Dialog</i>
-</p>
+	<p align="center">
+	<img src ="./images/lab1/Figure20.png">
+	</p>
+	<p align = "center">
+	<i>A C/RTL Co-simulation Dialog</i>
+	</p>
 
 3. Click **OK** to run the VHDL simulation.
 
-   The C/RTL Co-simulation will run, generating and compiling several files, and then simulating the design. It goes through three stages.
+	The C/RTL Co-simulation will run, generating and compiling several files, and then simulating the design. It goes through three stages.
 
-   First, the VHDL test bench is executed to generate input stimuli for the RTL design.  
-   Second, an RTL test bench with newly generated input stimuli is created and the RTL
-   simulation is then performed.  
-   Finally, the output from the RTL is re-applied to the VHDL test bench to check the results.    
-   In the console window you can see the progress and also a message that the test is passed.  
-   This eliminates writing a separate testbench for the synthesized design.
+	First, the VHDL test bench is executed to generate input stimuli for the RTL design. Second, an RTL test bench with newly generated input stimuli is created and the RTL simulation is then performed. Finally, the output from the RTL is re-applied to the VHDL test bench to check the results.    
 
-<p align="center">
-<img src ="./images/lab1/Figure21.png">
-</p>
-<p align = "center">
-<i>Console view showing simulation progress</i>
-</p>
+	In the console window you can see the progress and also a message that the test is passed.  
+	This eliminates writing a separate testbench for the synthesized design.
 
-4. Once the simulation verification is completed, the simulation report tab will open showing the
-    results. The report indicates if the simulation passed or failed. In addition, the report indicates the
-    measured latency and interval.
+	<p align="center">
+	<img src ="./images/lab1/Figure21.png">
+	</p>
+	<p align = "center">
+	<i>Console view showing simulation progress</i>
+	</p>
 
-  Since we have selected only VHDL, the result shows the latencies and interval (initiation) which
-  indicates after how many clock cycles later the next input can be provided. Since the design is
-  not pipelined, it will be latency+1 clock cycles.
-  <p align="center">
-  <img src ="./images/lab1/Figure22.png">
-  </p>
-  <p align = "center">
-  <i>Co-simulation results</i>
-  </p>
+4. Once the simulation verification is completed, the simulation report tab will open showing the results. The report indicates if the simulation passed or failed. In addition, the report indicates the measured latency and interval.
+
+	Since we have selected only VHDL, the result shows the latencies and interval (initiation) which indicates after how many clock cycles later the next input can be provided. Since the design is not pipelined, it will be latency+1 clock cycles.
+  
+	<p align="center">
+	<img src ="./images/lab1/Figure22.png">
+	</p>
+	<p align = "center">
+	<i>Co-simulation results</i>
+	</p>
 
 ### Viewing Simulation Results in Vivado
 
 #### Run Verilog simulation with Dump Trace option selected.
 
-1. Select **Solution > Run C/RTL Co-simulation** or click on the ![Check_Box](images/lab1/Check_Box.PNG) button in the *Synthesis* view to open the dialog box so the desired simulations can be run.
+1. Select **Solution > Run C/RTL Co-simulation** or click on the ![Check\_Box](images/lab1/Check\_Box.PNG) button in the *Synthesis* view to open the dialog box so the desired simulations can be run.
 
 2. Click on the **Verilog RTL** Selection option, leaving Verilog/VHDL Simulator Section option to Auto.
 
@@ -366,25 +360,24 @@ After completing this lab, you will be able to:
 
 #### Analyze the dumped traces.
 
-1. Click on the ![wave_viewer](images/lab1/wave_viewer.png) button on tools bar to open the wave viewer. This will start Vivado 2018.2 and open the wave viewer.
+1. Click on the ![wave\_viewer](images/lab1/wave\_viewer.png) button on tools bar to open the wave viewer. This will start Vivado 2018.2 and open the wave viewer.
 
-2. Click on the zoom fit tool button ( ) to see the entire simulation of one iteration.
+2. Click on the zoom fit tool button to see the entire simulation of one iteration.
 
-3. Select *a_address0* in the waveform window, right-click and select **Radix > Unsigned Decimal**.
-     Similarly, do the same for *b_address0* and *res_address0* signals.
+3. Select *a\_address0* in the waveform window, right-click and select **Radix > Unsigned Decimal**.  Similarly, do the same for *b\_address0* and *res\_address0* signals.
 
-4. Similarly, set the *a_q0, b_q0,* and *res_d0* radix to **Signed Decimal**.
+4. Similarly, set the *a\_q0, b\_q0,* and *res\_d0* radix to **Signed Decimal**.
 
-   You should see the output similar to shown below.
-   <p align="center">
-   <img src ="./images/lab1/Figure26.png">
-   </p>
-   <p align = "center">
-   <i>Full waveform showing iteration worth simulation</i>
-   </p>
-   Note that as soon as ap_start is asserted, ap_idle has been de-asserted indicating that the
-   design is in computation mode. The ap_idle signal remains de-asserted until ap_done is
-   asserted, indicating completion of the process. This indicates 79 clock cycles latency.
+	You should see the output similar to shown below.
+
+	<p align="center">
+	<img src ="./images/lab1/Figure26.png">
+	</p>
+	<p align = "center">
+	<i>Full waveform showing iteration worth simulation</i>
+	</p>
+
+	Note that as soon as ap\_start is asserted, ap\_idle has been de-asserted indicating that the design is in computation mode. The ap\_idle signal remains de-asserted until ap\_done is asserted, indicating completion of the process. This indicates 79 clock cycles latency.
 
 5. Using the *Zoom In* button, view area of ~160 ns and ~550 ns.
     <p align="center">
@@ -394,8 +387,8 @@ After completing this lab, you will be able to:
     <i>Zoomed view</i>
     </p>
 
-    Observe that the design expects element data by providing a_address0, a_ceo, b_address0,
-    b_ceo signals and outputs result using res_d0, res_we0, and res_ce0.
+    Observe that the design expects element data by providing a\_address0, a\_ceo, b\_address0,
+    b\_ceo signals and outputs result using res\_d0, res\_we0, and res\_ce0.
 
 6. View various part of the simulation and try to understand how the design works.
 
@@ -407,17 +400,16 @@ After completing this lab, you will be able to:
 
 1. In Vivado-HLS, select **Solution > Export RTL** or click on the ![Export](images/lab1/Export.png) button on tools bar to open the dialog box so the desired implementation can be run.
 
-  An Export RTL Dialog box will open.
-  <p align="center">
-  <img src ="./images/lab1/Figure28.png">
-  </p>
-  <p align = "center">
-  <i>A Export RTL Dialog box</i>
-  </p>
+	An Export RTL Dialog box will open.
 
-  With default settings (shown above), the IP packaging process will run and create a package for
-  the Vivado IP Catalog. Another option available from the Format Selection drop-down menu, is to
-  create System Generator for DSP.
+	<p align="center">
+	<img src ="./images/lab1/Figure28.png">
+	</p>
+	<p align = "center">
+	<i>A Export RTL Dialog box</i>
+	</p>
+
+	With default settings (shown above), the IP packaging process will run and create a package for the Vivado IP Catalog. Another option available from the Format Selection drop-down menu, is to create System Generator for DSP.
 
 2. Click on the drop-down menu of the **Evaluate Generated RTL** field and select **VHDL**.
 
@@ -428,9 +420,10 @@ After completing this lab, you will be able to:
     <p align = "center">
     <i>Selecting Evaluate options</i>
     </p>
+
 4. Click **OK** and the implementation run will begin.
 
-   You can observe the progress in the Vivado HLS Console window. It goes through several phases:
+	You can observe the progress in the Vivado HLS Console window. It goes through several phases:
 
 * Exporting RTL as an IP in the IP-XACT format
 * RTL evaluation, since we selected Evaluate option 1.Goes through Synthesis 2.Goes through Placement and Routing
@@ -460,18 +453,16 @@ After completing this lab, you will be able to:
 file whereas the vhdl sub-folder has several files and sub-folders as the synthesis and
 implementation runs were made for it.
 
-It includes project.xpr file (the Vivado project file), matrixmul.xdc file (timing constraint file),
-project.runs folder (which includes synth_1 and impl_1 sub-folders created by the synthesis and
-implementation runs) among others.
+	It includes project.xpr file (the Vivado project file), matrixmul.xdc file (timing constraint file), project.runs folder (which includes synth\_1 and impl\_1 sub-folders created by the synthesis and implementation runs) among others.
 
-<p align="center">
-<img src ="./images/lab1/Figure33.png">
-</p>
-<p align = "center">
-<i>The implementation directory</i>
-</p>
+	<p align="center">
+	<img src ="./images/lab1/Figure33.png">
+	</p>
+	<p align = "center">
+	<i>The implementation directory</i>
+	</p>
 
-7. Expand the **ip** folder and observe the IP packaged as a zip file, **xilinx_com_hls_matrixmul_1_0.zip**, which can be added to the Vivado IP catalog.
+7. Expand the **ip** folder and observe the IP packaged as a zip file, **xilinx\_com\_hls\_matrixmul\_1\_0.zip**, which can be added to the Vivado IP catalog.
     <p align="center">
     <img src ="./images/lab1/Figure34.png">
     </p>
@@ -489,13 +480,9 @@ design. You also learned how to use the Analysis capability to understand the sc
 ### Answers
 1. Answer the following question:
 
-   Estimated clock period: **8.70 ns**   
-   Worst case latency: **79 clock cycles**   
-   Number of DSP48E used: **1**  
-   Number of FFs used: **44**   
-   Number of LUTs used: **184**  
-
-
-
-
+	Estimated clock period: **8.70 ns**   
+	Worst case latency: **79 clock cycles**   
+	Number of DSP48E used: **1**  
+	Number of FFs used: **44**   
+	Number of LUTs used: **184**  
 
