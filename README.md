@@ -24,7 +24,7 @@ To use the source files for each of the labs in this workshop, you have to clone
 
 In the instructions for the labs;
 
-**{sources}** refers to the location where you will get the base files for the labs [here](https://github.com/xupgit/High-Level-Syntheis-Flow-o-Zynq-using-Vivado-HLS/tree/master/source)
+**{sources}** refers to the location where you will get the base files for the labs [here](https://github.com/xupgit/High-Level-Syntheis-Flow-on-Zynq-using-Vivado-HLS/tree/master/source)
 
 **{labs}** refers to the location which you will use as your workspace for the labs in the workshop
 
