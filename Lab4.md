@@ -491,7 +491,7 @@ integrated the generated IP-XACT adapter, and tested the system with the provide
 	<i>The Zynq IP Block</i>
 	</p>
 
-5. Notice the message at the top of the Diagram window that Designer Assistance available. Click on **Run Block Automation** and select */processing\_system7\_0*
+5. Notice the message at the top of the Diagram window that Designer Assistance available. Click on **Run Block Automation** and select *processing\_system7\_0*
 
 6. Click **OK** when prompted to run automation.
     <p align="center">
@@ -561,12 +561,12 @@ by typing *gpi* and double-click on the AXI GPIO entry to add an instance.
 6. Similarly add an instance of the **zed\_audio\_ctrl**.
 
 7. Notice that Design assistance is available. Click on *Run Connection Automation*, and select
-**/axi\_gpio\_0/S\_AXI**
+**axi\_gpio\_0/S\_AXI**
 
 8. Click **OK** to connect it to the M\_AXI\_GP0 interface.
 	Notice two additional blocks, Proc Sys Reset, and AXI Interconnect have automatically been added to the design.
 
-9. Similarly, click on *Run Connection Automation*, and select **/zed\_audio\_ctrl\_0/S\_AXI**.
+9. Similarly, click on *Run Connection Automation*, and select **zed\_audio\_ctrl\_0/S\_AXI**.
 
 #### Make IIC\_1, GPIO, FCLK\_CLK1, and zed\_audio\_ctrl ports external.
 
