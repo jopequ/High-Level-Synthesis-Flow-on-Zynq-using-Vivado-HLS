@@ -86,7 +86,7 @@ After completing this lab, you will be able to:
 
 1. Select **Project > Run C Simulation**, and click **OK** in the C Simulation Dialog window.
 
-	The files will be compiled and you will see the output in the Console window.
+	The files will be compiled and you will see the output in the Console window <a name="ProgramOutput"></a>.
     <p align="center">
     <img src ="./images/lab1/Figure6.png">
     </p>
@@ -160,7 +160,7 @@ After completing this lab, you will be able to:
 11. Set a breakpoint on line 134 (return err\_cnt;), and click on the **Resume** button.
 
      The execution will continue until the breakpoint is encountered. The console window will show
-     the results as seen earlier (Figure 7).
+     the results as seen [in](#ProgramOutput).
 
 12. Press the **Resume** button or **Terminate** button to finish the debugging session.
 

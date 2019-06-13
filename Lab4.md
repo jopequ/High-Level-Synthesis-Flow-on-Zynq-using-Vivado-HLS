@@ -292,7 +292,7 @@ remains same; however, LUT and FF consumptions have slightly increased.
 
 4. Click on **Run Connection Automation**, and select **All Automation**.
 
-5. Click on **/fir\_left/s\_axi\_fir\_io** and **/fir\_right/ s\_axi\_fir\_io**. and verify that they will both be   connected to the M\_AXI\_GP0, and click **OK**.
+5. Click on **/fir\_left/s\_axi\_fir\_io** and **/fir\_right/s\_axi\_fir\_io**. and verify that they will both be   connected to the M\_AXI\_GP0, and click **OK**.
 
 #### Enable the PS-PL Interrupt ports > IRQ\_F2P ports. Add an instance of concat IP with two single-bit input ports. Connect input ports to the interrupt ports of the two FIR instances and the output port to the IRQ\_F2P port of the processing\_system7\_0 instance.
 
@@ -523,7 +523,7 @@ Zynq processing system.
     <img src ="./images/lab4/FigureA7.png">
     </p>
     <p align = "center">
-    <i>Enabling and setting the frequency of FCLK\_CLK1</i>
+    <i>Enabling and setting the frequency of FCLK_CLK1</i>
     </p> 
 6. Click **OK**.
 	Notice that the Zynq block only shows the necessary ports.
@@ -586,6 +586,6 @@ external.
 	<img src ="./images/lab4/FigureA9.png">
 	</p>
 	<p align = "center">
-	<i>Block design after I2C based zed\_audio\_ctrl core added and connections made for the Pynq</i>
+	<i>Block design after I2C based zed_audio_ctrl core added and connections made for the Pynq</i>
 	</p> 
 

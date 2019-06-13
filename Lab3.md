@@ -7,6 +7,7 @@ After completing this lab, you will be able to:
 * Add directives in your design
 * Improve performance using PIPELINE directive
 * Distinguish between DATAFLOW directive and Configuration Command functionality
+* 
 * Apply memory partitions techniques to improve resource utilization
 
 ## Steps
@@ -71,7 +72,7 @@ After completing this lab, you will be able to:
        <i>The design under consideration</i>
        </p>
 
-      The top-level function *dct*, is defined at line 78. It implements 2D DCT algorithm by first processing each row of the input array via a 1D DCT then processing the columns of the resulting array through the same 1D DCT. It calls read\\_data, dct\\_2d, and write\\_data functions.
+      The top-level function *dct*, is defined at line 78. It implements 2D DCT algorithm by first processing each row of the input array via a 1D DCT then processing the columns of the resulting array through the same 1D DCT. It calls read\_data, dct\_2d, and write\_data functions.
 
       The read\_data function is defined at line 54 and consists of two loops – RD\_Loop\_Row and RD\_Loop\_Col. The write\_data function is defined at line 66 and consists of two loops to perform writing the result. The dct\_2d function, defined at line 23, calls dct\_1d function and performs transpose.
 
@@ -102,7 +103,7 @@ After completing this lab, you will be able to:
  <img src ="./images/lab3/Figure4.png">
  </p>
  <p align = "center">
- <i>Inlining of read\_data and write\_data functions</i>
+ <i>Inlining of read_data and write_data functions</i>
  </p> 
 
 3. The *Synthesis Report* shows the performance and resource estimates as well as estimated
@@ -133,11 +134,11 @@ latency in the design. Note that the design is not optimized nor is pipelined.
     <p align = "center">
     <i>Generated interface signals</i>
     </p> 
-    You can see ap\_clk, ap\_rst are automatically added. The ap\_start, ap\_done, ap\_idle, and
-    ap\_ready are top-level signals used as handshaking signals to indicate when the design is able to
-    accept next computation command (ap\_idle), when the next computation is started (ap\_start),
-    and when the computation is completed (ap\_done). The top-level function has input and output
-    arrays, hence an ap\_memory interface is generated for each of them.
+    You can see ap_clk, ap_rst are automatically added. The ap_start, ap_done, ap_idle, and
+    ap_ready are top-level signals used as handshaking signals to indicate when the design is able to
+    accept next computation command (ap_idle), when the next computation is started (ap_start),
+    and when the computation is completed (ap_done). The top-level function has input and output
+    arrays, hence an ap_memory interface is generated for each of them.
 
 6. Open *dct\_1d.rpt* and *dct\_2d.rpt* files either using the *Explorer* view or by using a hyperlink at the
 bottom of the *dct.rpt* in the information view. The report for dct\_2d clearly indicates that most of
@@ -239,7 +240,7 @@ indicates that the latency is 209 clock cycles ((24+2)*8+1).
 	<img src ="./images/lab3/Figure13.png">
 	</p>
 	<p align = "center">
-	<i>The dct\_1d function performance profile</i>
+	<i>The dct_1d function performance profile</i>
 	</p>
 
 5. In the *Performance Profile* pane, select the **DCT\_Inner\_Loop** entry, right-click on the **node\_60** (write) block in the **Schedule Viewer**, and select **Goto Source**. Notice that line 19 is highlighted which is preventing the flattening of the DCT\_Outer\_Loop.
@@ -248,7 +249,7 @@ indicates that the latency is 209 clock cycles ((24+2)*8+1).
 	<img src ="./images/lab3/Figure14.png">
 	</p>
 	<p align = "center">
-	<i>Understanding what is preventing DCT\_Outer\_Loop flattening</i>
+	<i>Understanding what is preventing DCT_Outer_Loop flattening</i>
 	</p>
 6. Switch to the *Synthesis* perspective.
 
@@ -271,10 +272,10 @@ indicates that the latency is 209 clock cycles ((24+2)*8+1).
     <img src ="./images/lab3/Figure15.png">
     </p>
     <p align = "center">
-    <i>PIPELINE directive applied to DCT\_Outer\_Loop</i>
+    <i>PIPELINE directive applied to DCT_Outer_Loop</i>
     </p>
     By pipelining an outer loop, all inner loops will be unrolled automatically (if legal), so there is no
-    need to explicitly apply an UNROLL directive to DCT\_Inner\_Loop. Simply move the pipeline to
+    need to explicitly apply an UNROLL directive to DCT_Inner_Loop. Simply move the pipeline to
     the outer loop: the nested loop will still be pipelined but the operations in the inner-loop body will
     operate concurrently.
 
@@ -309,13 +310,13 @@ indicates that the latency is 209 clock cycles ((24+2)*8+1).
        <img src ="./images/lab3/Figure18.png">
        </p>
        <p align = "center">
-       <i>Increased resource utilization of dct\_1d</i>
+       <i>Increased resource utilization of dct_1d</i>
        </p>
        <p align="center">
        <img src ="./images/lab3/Figure19.png">
        </p>
        <p align = "center">
-       <i> Automatic partitioning of dct\_coeff\_table</i>
+       <i> Automatic partitioning of dct_coeff_table</i>
        </p>
        <p align="center">
        <img src ="./images/lab3/Figure20.png">
@@ -333,7 +334,7 @@ indicates that the latency is 209 clock cycles ((24+2)*8+1).
    <img src ="./images/lab3/Figure21.png">
    </p>
    <p align = "center">
-   <i>DCT\_Outer\_Loop flattening</i>
+   <i>DCT_Outer_Loop flattening</i>
    </p>
 3. Select the **dct\_1d2** entry in the *Module Hierarchy* pane and observe that the DCT\_Outer\_Loop spans over eight states in the Performance view.
 
@@ -341,7 +342,7 @@ indicates that the latency is 209 clock cycles ((24+2)*8+1).
    <img src ="./images/lab3/Figure22.png">
    </p>
    <p align = "center">
-   <i>The Performance view of the DCT\_Outer\_Loop function</i>
+   <i>The Performance view of the DCT_Outer_Loop function</i>
    </p>
 
 4. Switch to the *Synthesis* perspective.
@@ -365,7 +366,7 @@ indicates that the latency is 209 clock cycles ((24+2)*8+1).
     <img src ="./images/lab3/Figure23.png">
     </p>
     <p align = "center">
-    <i>Applying ARRAY\_PARTITION directive to memory buffer</i>
+    <i>Applying ARRAY_PARTITION directive to memory buffer</i>
     </p>
 6. Similarly, apply the **ARRAY\_PARTITION** directive with dimension of 2 to the **col\_inbuf** array.
 
@@ -438,10 +439,11 @@ indicates that the latency is 209 clock cycles ((24+2)*8+1).
     <p align = "center">
     <i>Performance estimate after DATAFLOW directive applied</i>
     </p>
-	* The Dataflow pipeline throughput indicates the number of clock cycles between each set of
+	The Dataflow pipeline throughput indicates the number of clock cycles between each set of
 	inputs reads (interval parameter). If this value is less than the design latency it indicates the
 	design can start processing new inputs before the currents input data are output.
-	* Note that the dataflow is only supported for the functions and loops at the top-level, not those
+	
+	Note that the dataflow is only supported for the functions and loops at the top-level, not those
 	which are down through the design hierarchy. Only loops and functions exposed at the toplevel
 	of the design will get benefit from dataflow optimization.
 
@@ -519,7 +521,7 @@ entry.
     <img src ="./images/lab3/Figure31.png">
     </p>
     <p align = "center">
-    <i>Console view after INLINE directive applied to dct\_2d</i>
+    <i>Console view after INLINE directive applied to dct_2d</i>
     </p>   
 
 9. Switch to the *Analysis* perspective, expand the *Module Hierarchy* entries, and select the **dct** entry.
