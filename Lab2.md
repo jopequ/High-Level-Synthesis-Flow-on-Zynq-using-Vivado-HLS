@@ -28,11 +28,11 @@ After completing this lab, you will be able to:
 	<p align = "center">
 	<i>Validating the design</i>
 	</p>
-	Note that the source files (yuv\_filter.c, yuv\_filter\_test.c, and image\_aux.c) were compiled, then
-	yuv\_filter executable program was created, and then it was executed. The program tests the
+	Note that the source files (yuv_filter.c, yuv_filter_test.c, and image_aux.c) were compiled, then
+	yuv_filter executable program was created, and then it was executed. The program tests the
 	design and outputs Test Passed message.
 
-	A Vivado HLS tcl script file (pynq\\_yuv\\_filter.tcl) is provided and can be used to create a Vivado HLS project.
+	A Vivado HLS tcl script file (pynq\_yuv\_filter.tcl) is provided and can be used to create a Vivado HLS project.
 
 4. Type **vivado\_hls –f pynq\_yuv\_filter.tcl** in the Vivado HLS Command Prompt window to create the project targeting xc7z020clg400-1 part.
 
@@ -149,7 +149,7 @@ After completing this lab, you will be able to:
 	<img src ="./images/lab2/Figure9.png">
 	</p>
 	<p align = "center">
-	<i>Design analysis view of the YUV\_SCALE\_LOOP\_Y loop</i>
+	<i>Design analysis view of the YUV_SCALE_LOOP_Y loop</i>
 	</p>
 9. In the report tab, expand **Detail > Instance** section of the *Utilization Estimates* and click on the **grp\_rgb2yuv\_fu\_244 (rgb2yuv)** entry to open the report.
 
@@ -245,7 +245,7 @@ After completing this lab, you will be able to:
 	<p align = "center">
 	<i>Performance comparison after pipelining</i>
 	</p>
-	In Solution1, the total loop latency of the inner-most loop was loop\_body\_latency x loop iteration count, whereas in Solution2 the new total loop latency of the inner-most loop is loop\_body\_latency + loop iteration count.
+	In Solution1, the total loop latency of the inner-most loop was loop_body_latency x loop iteration count, whereas in Solution2 the new total loop latency of the inner-most loop is loop_body_latency + loop iteration count.
 
 15. Scroll down in the comparison report to view the resources utilization. Observe that the FFs, LUTs, and DSP48E utilization increased whereas BRAM remained same.
 
